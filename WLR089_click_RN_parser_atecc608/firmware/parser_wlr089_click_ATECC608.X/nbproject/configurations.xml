@@ -770,8 +770,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="WLR089_DFP" vendor="Microchip" version="1.1.26"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -843,7 +843,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="BOARD_SAMR34_XPRO;ENABLE_PDS=1;HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;_DEBUG_=1"/>
+                  value="BOARD_WLR089_CLICK;ENABLE_PDS=1;HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN;_DEBUG_=1"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value="-fno-common"/>
