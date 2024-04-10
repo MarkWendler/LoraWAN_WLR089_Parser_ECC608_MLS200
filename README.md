@@ -1,4 +1,4 @@
-# ATSAMR34_LORAWAN_H3 End device demo
+# ATSAMR34_LORAWAN_H3 RN_parser_ATECC608 demo
 This repo containing a simplified demo from Microchip official LORAWAN stack repo.
 https://github.com/MicrochipTech/ATSAMR34_LORAWAN_H3
 
