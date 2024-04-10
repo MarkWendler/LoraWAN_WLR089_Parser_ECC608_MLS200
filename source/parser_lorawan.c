@@ -354,7 +354,7 @@ void Parser_LoraGetCrtDataRate(parserCmdInfo_t* pParserCmdInfo)
 
 	LORAWAN_GetAttr(CURRENT_DATARATE, NULL, &crtDatarate);
 
-	itoa(crtDatarate, aParserData, 10U);
+	sprintf(aParserData,"%d",crtDatarate]);// itoa(crtDatarate, aParserData, 10U);
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
 
@@ -748,11 +748,11 @@ void Parser_LoraGetDatarateRange(parserCmdInfo_t* pParserCmdInfo)
 			minDr = drRange & 0x0F;
 			maxDr = (drRange >> 4) & 0x0F;
 
-			itoa(minDr, aParserData, 10U);
+			sprintf(aParserData,"%d",minDr);//itoa(minDr, aParserData, 10U);
 			crtIdx = strlen(aParserData);
 			aParserData[crtIdx] = ' ';
 			crtIdx++;
-			itoa(maxDr, &aParserData[crtIdx], 10U);
+			sprintf(&aParserData[crtIdx],"%d",maxDr);//itoa(maxDr, &aParserData[crtIdx], 10U);
 			pParserCmdInfo->pReplyCmd = aParserData;
 		}
 	}
@@ -866,7 +866,7 @@ void Parser_LoraGetLbt(parserCmdInfo_t* pParserCmdInfo)
 		ultoa(aParserData, lorawanLBTParams.lbtScanPeriod, 10U);
 		dataLen = strlen(aParserData);
 		aParserData[dataLen++] = ' ';
-		itoa(lorawanLBTParams.lbtThreshold, &aParserData[dataLen], 10U);
+		sprintf(&aParserData[dataLen],"%d",lorawanLBTParams.lbtThreshold);//itoa(lorawanLBTParams.lbtThreshold, &aParserData[dataLen], 10U);
 		dataLen = strlen(aParserData);
 		aParserData[dataLen++] = ' ';
 		ultoa(&aParserData[dataLen], lorawanLBTParams.maxRetryChannels, 10U);
@@ -1416,7 +1416,7 @@ void Parser_LoraGetMcastDr(parserCmdInfo_t* pParserCmdInfo)
 	uint8_t groupId = atoi(pParserCmdInfo->pParam1);
 	status = LORAWAN_GetAttr(MCAST_DATARATE, &groupId, &dr);
 	if (status == LORAWAN_SUCCESS) {
-		itoa(dr, aParserData, 10U);
+		sprintf(aParserData,"%d",dr);//itoa(dr, aParserData, 10U);
 		pParserCmdInfo->pReplyCmd = aParserData;
 	} else {
 		pParserCmdInfo->pReplyCmd = (char*) gapParserLorawanStatus[status];
@@ -1442,7 +1442,7 @@ static void ParserAppData(void *appHandle, appCbParams_t *data)
 				dataLen = strlen(aParserData);
 
 				//Handle port: the first byte from pData represents the port number
-				itoa(*pData, &aParserData[dataLen], 10);
+				sprintf(&aParserData[dataLen],"%d",*pData);//itoa(*pData, &aParserData[dataLen], 10);
 				dataLen = strlen(aParserData);
 
 				aParserData[dataLen] = ' ';
@@ -1683,7 +1683,7 @@ void Parser_LoraGetMacLastPacketRssi(parserCmdInfo_t* pParserCmdInfo)
 	int16_t rssi;
 
 	LORAWAN_GetAttr(LAST_PACKET_RSSI, NULL, &rssi);
-	itoa(rssi, aParserData, 10U);
+	sprintf(aParserData,"%d",rssi);//itoa(rssi, aParserData, 10U);
 
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
