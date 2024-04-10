@@ -354,7 +354,7 @@ void Parser_LoraGetCrtDataRate(parserCmdInfo_t* pParserCmdInfo)
 
 	LORAWAN_GetAttr(CURRENT_DATARATE, NULL, &crtDatarate);
 
-	sprintf(aParserData,"%d",crtDatarate]);// itoa(crtDatarate, aParserData, 10U);
+	sprintf(aParserData,"%d",crtDatarate);// itoa(crtDatarate, aParserData, 10U);
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
 

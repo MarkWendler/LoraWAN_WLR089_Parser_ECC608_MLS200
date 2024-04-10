@@ -30,6 +30,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <string.h>
 #include <ctype.h>
 #include "parser_utils.h"
+#include <stdio.h>
 
 /* String reply values */
 #define OFF_STR_IDX         0U // 0 = false;
@@ -106,7 +107,7 @@ void Parser_IntArrayToHexAscii(uint8_t arrayLen, uint8_t* pInArray, char* pOutHe
 	uint8_t iCtr = 0U;
 
 	for (iCtr = 0; iCtr < arrayLen; iCtr++) {
-		sprintf((char *) &pOutHexAscii[iCtr << 1],"%H",pInArray[iCtr]);// itoa(pInArray[iCtr], (char *) &pOutHexAscii[iCtr << 1], 16);
+		sprintf((char *) &pOutHexAscii[iCtr << 1],"%X",pInArray[iCtr]);// itoa(pInArray[iCtr], (char *) &pOutHexAscii[iCtr << 1], 16);
 
 		if (pInArray[iCtr] <= 15) {
 			/* Special treatment for figures [0..9]  */
