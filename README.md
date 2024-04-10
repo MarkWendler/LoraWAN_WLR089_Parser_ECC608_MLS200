@@ -13,11 +13,9 @@ Target board is WLR089-click from ChipCAD Ltd. (https://www.chipcad.hu/)
 4. Connect HW to EDBG-USB (on board programmer/debugger)
 5. Build and Program the device from MPLAB X IDE under **Production -> Make and Program Device**
 
-![Alt text](resources/WLR089_Xplained_run.gif)
-
-7. Connect to the virtual com port with a serial communication program (EDBG-USB built-in USB-UART functionality) 
+6. Connect to the virtual com port with a serial communication program (EDBG-USB built-in USB-UART functionality) 
    1.  115200-8-N-1 
-8. Observe the output on the terminal
+7. Observe the output on the terminal
 
 ```
 Last reset cause: External Reset
