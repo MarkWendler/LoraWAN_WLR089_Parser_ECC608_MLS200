@@ -1720,7 +1720,7 @@ void Parser_LoraGetMacPendingDutyCycle(parserCmdInfo_t* pParserCmdInfo)
 	uint32_t value;
 
 	LORAWAN_GetAttr(PENDING_DUTY_CYCLE_TIME, NULL, &value);
-	sprintf(aParserData,"%d",value);//utoa(value, aParserData, 10U);
+	sprintf(aParserData,"%d",(int)value);//utoa(value, aParserData, 10U);
 
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
@@ -1759,7 +1759,7 @@ void Parser_LoraGetJoindutycycleremaining(parserCmdInfo_t* pParserCmdInfo)
 {
 	uint32_t remainingtime;
 	LORAWAN_GetAttr(PENDING_JOIN_DUTY_CYCLE_TIME, NULL, &remainingtime);
-	sprintf(aParserData,"%d",remainingtime);//utoa(remainingtime, aParserData, 10U);
+	sprintf(aParserData,"%d",(int)remainingtime);//utoa(remainingtime, aParserData, 10U);
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
 
