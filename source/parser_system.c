@@ -95,7 +95,7 @@ void Parser_SystemGetVer(parserCmdInfo_t* pParserCmdInfo)
 void Parser_SystemGetCustomParam(parserCmdInfo_t* pParserCmdInfo)
 {
 	PDS_RESTORE(PDS_APP_CUSTOMPARAMETER) ;
-	sprintf(aParserData,"%d",pdsAppCustomParameter);//utoa(pdsAppCustomParameter, aParserData,  10U);
+	sprintf(aParserData,"%d",(uint32_t)pdsAppCustomParameter);//utoa(pdsAppCustomParameter, aParserData,  10U);
 	pParserCmdInfo->pReplyCmd = aParserData;
 }
 

@@ -235,6 +235,7 @@ void LORAWAN_Init(AppDataCb_t appdata, JoinResponseCb_t joindata) // this functi
 
 StackRetStatus_t LORAWAN_Reset (IsmBand_t ismBand)
 {
+    static bool testModeEnable = true;
     uint8_t paBoost;
     IsmBand_t prevBand = 0xff;
 
@@ -265,7 +266,7 @@ StackRetStatus_t LORAWAN_Reset (IsmBand_t ismBand)
     loRa.fCntUp.value = 0;
     loRa.devNonce = MAC_DEVNONCE;
     loRa.joinNonce = MAC_JOINNONCE;
-    loRa.joinNonceType = LWversion; //loRa.joinNonceType = JOIN_NONCE_INCREMENTAL;  
+    loRa.joinNonceType = LWVERSION; //loRa.joinNonceType = JOIN_NONCE_INCREMENTAL;  
     loRa.aggregatedDutyCycle = MAC_AGGREGATED_DUTYCYCLE;
     loRa.adrAckCnt = 0;
     loRa.counterAdrAckDelay = 0;
@@ -354,7 +355,9 @@ StackRetStatus_t LORAWAN_Reset (IsmBand_t ismBand)
     loRa.protocolParameters.adrAckLimit = ADR_ACK_LIMIT;
     LorawanLinkCheckConfigure (DISABLED); // disable the link check mechanism
     LorawanMcastInit();
-    LORAWAN_SetAttr(TEST_MODE_ENABLE, TestModeEnabled);
+#ifdef TESTMODE_ENABLE
+    LORAWAN_SetAttr(TEST_MODE_ENABLE, &testModeEnable);
+#endif
     return status;
 }
 
