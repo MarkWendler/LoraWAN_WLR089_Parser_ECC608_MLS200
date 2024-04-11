@@ -533,11 +533,13 @@ ATCA_STATUS calib_execute_command(ATCAPacket* packet, ATCADevice device)
 
         if ((status = atCheckCrc(packet->data)) != ATCA_SUCCESS)
         {
+            ATCA_TRACE(status,"CRC");
             break;
         }
 
         if ((status = isATCAError(packet->data)) != ATCA_SUCCESS)
         {
+            ATCA_TRACE(status,"ATCA frame error");
             break;
         }
     }
