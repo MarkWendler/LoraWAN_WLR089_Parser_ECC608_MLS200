@@ -124,7 +124,8 @@
 #ifdef ATCA_PRINTF
     #define ATCA_TRACE(s, m)         atca_trace_msg(s, __FILE__ ":" ATCA_TOSTRING(__LINE__) ":%x:" m "\n")
 #else
-    #define ATCA_TRACE(s, m)         (s == ATCA_SUCCESS) ? s : printf("ATCA_STATUS error: %X %s\r\n",s, m)
+    #define ATCA_TRACE(s, m)         atca_trace(s)
+    //#define ATCA_TRACE(s, m)         (s == ATCA_SUCCESS) ? s : printf("ATCA_STATUS error: %X %s\r\n",s, m)
 #endif
 
 #endif
