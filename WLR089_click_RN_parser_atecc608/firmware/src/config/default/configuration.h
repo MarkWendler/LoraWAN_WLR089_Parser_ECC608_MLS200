@@ -114,7 +114,7 @@ extern "C" {
 #define LW104   JOIN_NONCE_INCREMENTAL    
  
 #define LWVERSION       LW104
-#define TESTMODE_ENABLE //if defined no channel overload protection (violates regulation for production)
+//#define TESTMODE_ENABLE //if defined no channel overload protection (violates regulation for production)
     
 // ---------- CRYPTO HARDWARE MANIFEST START ----------
 #define WOLFSSL_HAVE_MCHP_HW_CRYPTO_AES_HW_U2238
